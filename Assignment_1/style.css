@@ -12,7 +12,7 @@ body{
   padding: 15px;
   justify-content: space-between;
   align-items: center;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .header img{
@@ -50,7 +50,7 @@ body{
   border-radius: 4px;
 }
 
-.statement{
+.dream{
   font-family: 'Poiret One', cursive;
   max-width: 200px;
   background: white;
@@ -66,11 +66,6 @@ body{
   background: white;
 }
 
-.work h2{
-  font-weight: 700;
-}
-
-
 @media screen and (max-width: 1000px){
   .header{
       background: rgb(211, 142, 190); }
@@ -85,7 +80,7 @@ body{
       margin-bottom: 30px;
       width: inherit;
   }
-  .statement{
+  .dream{
       align-self: center;
   }
   .work{
