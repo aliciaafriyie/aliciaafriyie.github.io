@@ -24,8 +24,8 @@ paragraphone.append(paragraph);
 
 // 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
 
-var three = " the third charater is  " + myFullName.charAt(2);
-  paragraphtwo.append(three);
+var three = " the third charater of my first name is  " + myFullName.charAt(2);
+paragraphtwo.append(three);
 
 // 6 Add a new line to your second paragraph
 
@@ -33,7 +33,7 @@ paragraphtwo.append("\n");
 
 // 7 Return the final three characters of your last name to that new line
 
-var final = ", the third charaters of my last name is  " + myFullName.substring(myFullName.length - 3, myFullName.length);
+var final = ", the last three charaters of my last name is  " + myFullName.substring(myFullName.length - 3, myFullName.length);
 paragraphtwo.append(final);
 
 
