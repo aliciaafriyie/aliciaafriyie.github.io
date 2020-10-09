@@ -18,29 +18,33 @@ paragraphone.className = "content1"
 paragraphtwo.className = "content2"
 
 
-
-
-
-
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
 //      (e.g. my name has 10 characters).
 
-var paragraph = "my name has " + myFullName.length + " characters.";
-paragraphone.append(paragraph);
+//var paragraph = "my name has " + myFullName.length + " characters.";
+// paragraphone.append(paragraph);
+
+
+const legs = myFullName.length - 2; 
+paragraphone.innerText = "my name has " + legs + " characters.";
+
 
 // 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
 
-var three = " the third charater of my first name is  " + myFullName.charAt(2);
-paragraphtwo.append(three);
+
+
+const leg = myFullName.charAt(2); 
+paragraphtwo.innerText = " the third charater of my first name is " + leg + ". \n" 
+
 
 
 // 6 Add a new line to your second paragraph
 
-paragraphtwo.append("\n");
+// paragraphtwo.append("\n");
 
 // 7 Return the final three characters of your last name to that new line
 
-var final = ", the last three charaters of my last name is  " + myFullName.substring(myFullName.length - 3, myFullName.length);
+var final = "the last three charaters of my last name is  " + myFullName.substring(myFullName.length - 3, myFullName.length);
 paragraphtwo.append(final);
 
 
