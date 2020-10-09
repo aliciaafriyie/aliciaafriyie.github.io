@@ -4,10 +4,11 @@ document.querySelector(".header").innerHTML = myFullName + "\'s Lab 4\n";
 
 // 2 Insert two paragraphs into the div with the class "content"
 //  Label each paragraph with a distinct class name
+
 var paragraphone = document.createElement("paragraph1");
 var paragraphtwo = document.createElement("paragraph2");
-var paragraphonetext = document.createTextNode("paragraph1");
-var paragraphtwotext = document.createTextNode("paragraph2");
+var paragraphonetext = document.createTextNode("This is paragraph one. ");
+var paragraphtwotext = document.createTextNode("This is paragraph two. ");
 paragraphone.appendChild(paragraphonetext);
 paragraphtwo.appendChild(paragraphtwotext);
 var newcontentparagraphs = document.querySelector(".content");
@@ -15,6 +16,11 @@ newcontentparagraphs.appendChild(paragraphone);
 newcontentparagraphs.appendChild(paragraphtwo);
 paragraphone.className = "content1"
 paragraphtwo.className = "content2"
+
+
+
+
+
 
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
 //      (e.g. my name has 10 characters).
@@ -26,6 +32,7 @@ paragraphone.append(paragraph);
 
 var three = " the third charater of my first name is  " + myFullName.charAt(2);
 paragraphtwo.append(three);
+
 
 // 6 Add a new line to your second paragraph
 
