@@ -248,7 +248,7 @@ const list = [
 const content = document.querySelector(".content");
 const button = document.querySelector(".new");
 
-button.addEventListener("click", country);
+button.addeventlistener("click", country);
 
 const ordered = document.createElement("ol");
 ordered.className = "countries";
@@ -258,15 +258,12 @@ function country() {
   ordered.innerHTML = " ";
   shuffleArray(list);
   const shuffledlist = list.slice(0, 25);
-  
-  const filtered = list.filter(function (x){
-    return shuffledlist.indexOf(x) < 0;
-  });
-  console.log(filtered);
 
+
+  
   const map1 = shuffledlist.map((country) => {
     const li = document.createElement("li");
-    li.innerHTML = "<strong>" + country.code + "</strong>" + " ";
+    li.innerHTML = "<strong>" + country.code  + " ";
     li.append(country.name);
     ordered.appendChild(li);
   });
