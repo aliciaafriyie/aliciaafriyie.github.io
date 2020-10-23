@@ -6,6 +6,7 @@ body {
 h1 {
     text-align: center;
     color: red;
+    font-weight: bold;
 }
 
 form {
@@ -30,6 +31,7 @@ label {
     width: 90px;
     text-align: left;
     font-family: 'Grandstander', cursive;
+    font-weight: bold;
 }
   
 textarea{
