@@ -1,4 +1,4 @@
-const list = [
+const clist = [
   { name: "Afghanistan", code: "AF" },
   { name: "Åland Islands", code: "AX" },
   { name: "Albania", code: "AL" },
@@ -245,25 +245,24 @@ const list = [
 ];
 
 
-const content = document.querySelector(".content");
-const button = document.querySelector(".new");
+const myContent = document.querySelector(".content");
+const myButton = document.querySelector(".new");
 
-button.addeventlistener("click", country);
+myButton.addEventListener("click", showCountry);
 
 const ordered = document.createElement("ol");
 ordered.className = "countries";
-content.appendChild(ordered);
+myContent.appendChild(ordered);
 
-function country() {
+function showCountry() {
   ordered.innerHTML = " ";
-  shuffleArray(list);
-  const shuffledlist = list.slice(0, 25);
+  shuffleArray(clist);
+  const shuffledclist = clist.slice(0, 25);
+ 
 
-
-  
-  const map1 = shuffledlist.map((country) => {
+  const map1 = shuffledclist.map((country) => {
     const li = document.createElement("li");
-    li.innerHTML = "<strong>" + country.code  + " ";
+    li.innerHTML = "<strong>" + country.code + "</strong>" + " ";
     li.append(country.name);
     ordered.appendChild(li);
   });
@@ -275,3 +274,7 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
+
+
+
+
