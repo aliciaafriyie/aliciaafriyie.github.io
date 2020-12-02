@@ -1,19 +1,24 @@
 {
-    "name": "aliciaafriyie.github.io",
-    "version": "1.0.0",
-    "description": "alicialab8",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/aliciaafriyie/aliciaafriyie.github.io.git"
-    },
-    "author": "alicia",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/aliciaafriyie/aliciaafriyie.github.io/issues"
-    },
-    "homepage": "https://github.com/aliciaafriyie/aliciaafriyie.github.io#readme"
+  "name": "aliciaafriyie.github.io",
+  "version": "1.0.0",
+  "description": "alicialab8",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliciaafriyie/aliciaafriyie.github.io.git"
+  },
+  "author": "alicia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliciaafriyie/aliciaafriyie.github.io/issues"
+  },
+  "homepage": "https://github.com/aliciaafriyie/aliciaafriyie.github.io#readme",
+  "dependencies": {
+    "express": "^4.17.1"
   }
+}
+
