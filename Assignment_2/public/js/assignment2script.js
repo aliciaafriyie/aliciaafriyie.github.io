@@ -345,3 +345,105 @@ window.onload = async function loadPage() {
 
 
 }
+
+
+/*
+ ------ ADD NEW GROUP ------
+*/
+function submitNewGroup() {
+
+  console.log("Called submitNewGroupr");
+  let name = document.getElementById("addname").value;
+
+  console.log("name:" + name);
+  data = { 'name': name };
+
+  //console.log(JSON.stringify(data))
+  let groupURL = "http://localhost:4000/group";
+  const fetchPromise = fetch(groupURL, {
+    method: 'POST', headers: {
+      'Content-Type': 'application/json'
+
+    }, body: JSON.stringify(data)
+  });
+
+  let groupId;
+  fetchPromise
+    .then((response) => {
+      return response.json();
+    })
+    .then((group) => {
+      console.log("Here POST group");
+      console.log(group);
+
+      let message = "ERROR";
+      if (typeof group.id !== "undefined") {
+        name = group.data.name;
+        groupId = group.id;
+        message = "Message: " + group.message + " name: " + name + "<br>groupId: " + groupId + "<br> ";
+      }
+      else if(typeof group !== "undefined"){
+        message = "Message: " + group.message ;
+      }
+      document.getElementById("postNewGroupContent").innerHTML = message;
+    })
+    .catch((err) => {
+      console.log(err);
+      document.getElementById("postNewGroupContent").innerHTML = "Invalid Group : " + data.name;
+    });
+
+}
+
+
+
+
+/*
+ ------ SEARCH TASK ------
+*/
+
+const taskNames = new Array()
+
+
+fetch('./allTasks', settings)
+    .then(res => res.json())
+    .then((json) => {
+      json.data.forEach(element => {
+        taskNames.push(element)
+      });
+    })
+
+   function findMatches(wordToMatch, tasks){
+     return tasks.filter(task => {
+       const regex = new RegExp(wordToMatch, 'gi')
+       return task.taskName.match(regex) 
+     });
+   } 
+
+
+
+
+
+
+
+   function displayMatches() {
+     const matchArray = findMatches(this.value, taskNames);
+     const html = matchArray.map(place => {
+       const regex = new RegExp(this.value, 'gi');
+       const taskName = place.taskName.replace(regex, `<span class ="hl">${this.value}</span>`); 
+       
+       
+       return `
+       <li>
+       <span class="name">${taskName}</span>
+       </li> 
+       `;
+     }).join('');
+     suggestion.innerHTML = html;
+   }
+
+
+   const searchInput = document.querySelector('.searchtask');
+   const suggestion = document.querySelector('.tasksuggestions');
+
+   searchInput.addEventListener('change', displayMatches);
+   searchInput.addEventListener('keyup', displayMatches);
